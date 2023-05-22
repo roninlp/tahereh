@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none border border-black bg-white text-black drop-shadow-hard transition-all duration-300 hover:bg-white hover:text-black hover:drop-shadow-none",
+          "rounded-none border border-black bg-white text-black drop-shadow-hard transition-all duration-500 hover:bg-black hover:text-white hover:drop-shadow-none",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -23,7 +23,7 @@ const buttonVariants = cva(
       size: {
         default: "h-10 py-2 px-4",
         sm: "h-9 px-3 rounded-md",
-        lg: "py-4 px-8 ",
+        lg: "max-w-xs py-4 px-8 ",
       },
     },
     defaultVariants: {
