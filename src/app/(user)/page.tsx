@@ -40,7 +40,7 @@ export default function Home() {
           </h3>
           <div>
             <Button size="lg" className="">
-              <p className="font-paeez text-4xl ">لورم ایپسوم</p>
+              <p className="font-vazir text-2xl ">لورم ایپسوم</p>
             </Button>
           </div>
         </div>
