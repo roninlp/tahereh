@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import headerTitle from "../../public/Header Title.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
 
 const Header = () => {
@@ -16,9 +16,15 @@ const Header = () => {
       setShowNavbar(false);
     }
   };
-  window = window || {};
 
-  window.addEventListener("scroll", toggleNavbar);
+  useEffect(() => {
+    window.addEventListener("scroll", toggleNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", toggleNavbar);
+    };
+  }, []);
+
   return (
     <header
       className={clsx(
