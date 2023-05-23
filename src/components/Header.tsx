@@ -16,6 +16,7 @@ const Header = () => {
       setShowNavbar(false);
     }
   };
+  window = window || {};
 
   window.addEventListener("scroll", toggleNavbar);
   return (
