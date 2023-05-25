@@ -88,6 +88,7 @@ module.exports = {
       },
       dropShadow: {
         hard: "6px -6px #000",
+        zero: "0px 0px #000",
       },
     },
   },
