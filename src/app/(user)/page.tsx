@@ -1,4 +1,4 @@
-import { Button } from "@/components/button";
+import { Button } from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <section className="h-screen w-full ">
+      <section className="pb-24">
         <div className="flex flex-col items-center justify-center gap-6 bg-darkGreen py-8">
           <h3 className="font-vazir text-2xl text-white">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
@@ -82,32 +82,40 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="flex flex-col items-center gap-8 bg-mid-pattern py-8 font-vazir text-white">
-        <h2 className="z-10 text-center text-7xl font-bold">
-          <span className="relative">
-            فلسفه
-            <div className="absolute bottom-2 right-0 -z-10 h-1/2 w-full bg-darkGreen"></div>
-          </span>
+      <section className="flex flex-col items-center gap-8 bg-mid-pattern py-8 font-vazir text-white">
+        <h2 dir="rtl" className="z-10 text-center text-7xl font-bold">
+          <span className="relative inline-block before:absolute before:-inset-2 before:top-6 before:block before:-skew-y-3 before:bg-darkGreen">
+            <span className="relative">
+              فلسفه
+              {/* <div className="absolute bottom-2 right-0 -z-10 h-1/2 w-full bg-darkGreen"></div> */}
+            </span>
+          </span>{" "}
           من
         </h2>
         <div>
-          <ul className="flex flex-col items-center gap-8">
+          <ul className="flex flex-col items-center gap-8 md:flex-row-reverse md:gap-20">
             <li className="flex flex-row-reverse items-center gap-4 border-b-4 border-white text-center text-2xl">
               <span className="text-8xl underline underline-offset-8">۱</span>
               !اول استراتژی
               <br />، بعد متن
             </li>
-            <li>
-              <span>۲</span>
-              !تست قبل از هر چیز
+            <li className="flex flex-row-reverse items-center gap-4 border-b-4 border-white text-center text-2xl">
+              <span className="text-8xl underline underline-offset-8">۳</span>
+              تست قبل از
+              <br />
+              !هر چیز
             </li>
             <li>
-              <span>۳</span>
-              !از آزمایش کردن نترس
+              <li className="flex flex-row-reverse items-center gap-4 border-b-4 border-white text-center text-2xl">
+                <span className="text-8xl underline underline-offset-8">۲</span>
+                از آزمایش کردن
+                <br />
+                !نترس
+              </li>
             </li>
           </ul>
         </div>
-      </div>
+      </section>
     </>
   );
 }
