@@ -1,13 +1,18 @@
 import { Button } from "@/components/Button";
+import BlogList from "@/components/BlogList";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { getPosts } from "@/sanity/lib/utils";
 
 export const metadata: Metadata = {
   title: "طاهره محزون",
+  description: "نویسنده محتوا",
 };
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPosts();
+
   return (
     <>
       <main className=" flex h-screen bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat">
@@ -110,16 +115,18 @@ export default function Home() {
               <br />
               !هر چیز
             </li>
-            <li>
-              <li className="flex flex-row-reverse items-center gap-4 border-b-4 border-white text-center text-2xl">
-                <span className="text-8xl underline underline-offset-8">۲</span>
-                از آزمایش کردن
-                <br />
-                !نترس
-              </li>
+
+            <li className="flex flex-row-reverse items-center gap-4 border-b-4 border-white text-center text-2xl">
+              <span className="text-8xl underline underline-offset-8">۲</span>
+              از آزمایش کردن
+              <br />
+              !نترس
             </li>
           </ul>
         </div>
+      </section>
+      <section>
+        <BlogList posts={posts} />
       </section>
     </>
   );
