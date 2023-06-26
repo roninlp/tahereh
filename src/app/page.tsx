@@ -3,7 +3,6 @@ import BlogList from "@/components/BlogList";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { getPosts } from "@/sanity/lib/utils";
 
 export const metadata: Metadata = {
   title: "طاهره محزون",
@@ -11,8 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const posts = await getPosts();
-
   return (
     <>
       <main className=" flex h-screen bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat">
@@ -125,8 +122,8 @@ export default async function Home() {
           </ul>
         </div>
       </section>
-      <section>
-        <BlogList posts={posts} />
+      <section className="mx-10 grid grid-cols-3 gap-4 pt-8">
+        <BlogList />
       </section>
     </>
   );
