@@ -8,6 +8,18 @@ export default defineConfig({
   clientId: null, // Get this from tina.io
   token: null, // Get this from tina.io
 
+  admin: {
+    auth: {
+      onLogin: async ({ token }) => {
+        location.href =
+          `/api/preview/enter?token=${token.id_token}&slug=` + location;
+      },
+      onLogout: async () => {
+        location.href = `/api/preview/exit?slug=` + location;
+      },
+    },
+  },
+
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -41,7 +53,7 @@ export default defineConfig({
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
+          router: ({ document }) => `/blog/${document._sys.filename}`,
         },
       },
     ],

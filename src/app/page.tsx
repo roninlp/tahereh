@@ -3,6 +3,7 @@ import BlogList from "@/components/BlogList";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { client } from "../../tina/__generated__/client";
 
 export const metadata: Metadata = {
   title: "طاهره محزون",
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  const postsResponse = await client.queries.postConnection();
+  const posts = postsResponse.data.postConnection.edges?.map((post) => {
+    return { slug: post?.node?._sys.filename };
+  });
+  console.log(posts);
   return (
     <>
       <main className=" flex h-screen bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat">
@@ -96,7 +102,7 @@ export default async function Home() {
               فلسفه
               {/* <div className="absolute bottom-2 right-0 -z-10 h-1/2 w-full bg-darkGreen"></div> */}
             </span>
-          </span>{" "}
+          </span>
           من
         </h2>
         <div>
@@ -123,7 +129,12 @@ export default async function Home() {
         </div>
       </section>
       <section className="mx-10 grid grid-cols-3 gap-4 pt-8">
-        <BlogList />
+        {/* <BlogList /> */}
+        {posts?.map((post) => (
+          <Link key={post.slug} href={`/blog/${post.slug}`}>
+            {post.slug}
+          </Link>
+        ))}
       </section>
     </>
   );
