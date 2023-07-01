@@ -1,5 +1,4 @@
 import { PostQuery } from "@/../tina/__generated__/types";
-import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 interface Props {
