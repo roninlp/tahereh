@@ -1,4 +1,3 @@
-import "@/app/globals.css";
 import { Vazir, Paeez } from "@/fonts/fonts";
 
 export default function RootLayout({

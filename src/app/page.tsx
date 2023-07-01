@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { client } from "../../tina/__generated__/client";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "طاهره محزون",
@@ -15,9 +16,10 @@ export default async function Home() {
   const posts = postsResponse.data.postConnection.edges?.map((post) => {
     return { slug: post?.node?._sys.filename };
   });
-  console.log(posts);
+  // console.log(posts);
   return (
     <>
+      <Header />
       <main className=" flex h-screen bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat">
         <div className="mx-20 my-8 flex h-full w-full flex-col-reverse items-center justify-center gap-12 md:flex md:flex-row md:justify-around">
           <div className="relative flex items-center justify-center">

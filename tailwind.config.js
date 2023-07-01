@@ -1,11 +1,21 @@
 /** @type {import('tailwindcss').Config} */
+
+const remark = require("remark");
+
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: {
+    files: [
+      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    transform:{
+      md: (content) => {
+        return remark().process(content)
+      }
+    }
+  },
   theme: {
     container: {
       center: true,

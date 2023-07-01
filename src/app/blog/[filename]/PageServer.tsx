@@ -1,10 +1,13 @@
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+"use client";
 
-export default function PageServer({ data }) {
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { PostQuery } from "@/../tina/__generated__/types";
+
+export default function PageServer({ data }: { data: PostQuery }) {
   return (
-    <>
-      <h1>{data.post.title}</h1>
+    <div>
       <TinaMarkdown content={data.post.body} />
-    </>
+      <p>{data.post.title}</p>
+    </div>
   );
 }
