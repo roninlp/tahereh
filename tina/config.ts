@@ -7,6 +7,7 @@ export default defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID ?? "", // Get this from tina.io
   token: process.env.NEXT_PUBLIC_TINA_TOKEN_ID ?? "", // Get this from tina.io
 
+  localContentPath: "../../tahereh-content-repo/",
   admin: {
     auth: {
       onLogin: async ({ token }) => {
