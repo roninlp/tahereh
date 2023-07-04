@@ -10,11 +10,11 @@ module.exports = {
       "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
       "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
-    transform:{
+    transform: {
       md: (content) => {
-        return remark().process(content)
-      }
-    }
+        return remark().process(content);
+      },
+    },
   },
   theme: {
     container: {
@@ -102,5 +102,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };

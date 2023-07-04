@@ -3,14 +3,12 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 interface Props {
   data: PostQuery;
-  variables: object;
-  query: string;
 }
 
 export default function Blog({ data }: Props) {
   return (
-    <>
+    <article className="prose">
       <TinaMarkdown content={data.post.body} />
-    </>
+    </article>
   );
 }

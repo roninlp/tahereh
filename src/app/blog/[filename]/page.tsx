@@ -14,5 +14,7 @@ export default async function Page({
   const { isEnabled } = draftMode();
   // console.log(isEnabled);
 
-  return <>{isEnabled ? <ClientBlog {...res} /> : <ServerBlog {...res} />}</>;
+  return (
+    <>{isEnabled ? <ClientBlog {...res} /> : <ServerBlog data={res.data} />}</>
+  );
 }
