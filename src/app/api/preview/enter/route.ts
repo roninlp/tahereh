@@ -9,26 +9,23 @@ export async function GET(request: NextRequest) {
     slug: request.nextUrl.searchParams.get("slug"),
   };
   const slug = searchParams.slug;
+  const isLocal = process.env.NODE_ENV == "development";
 
-  if (process.env.NODE_ENV === "development") {
-    console.log("dev");
-    draftMode().enable();
-  } else {
-    const token = searchParams.token;
+  const token = searchParams.token;
 
-    const isAuthorizedRes = await isUserAuthorized({
-      token: `Bearer ${token}`,
-      clientID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID ?? "",
-    });
+  const isAuthorizedRes = await isUserAuthorized({
+    token: `Bearer ${token}`,
+    clientID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID ?? "",
+  });
 
-    if (isAuthorizedRes) {
-      draftMode().enable();
-    }
-    return new Response(null, {
-      status: 307,
-      headers: {
-        location: slug ?? "",
-      },
-    });
+  if (!isAuthorizedRes && !isLocal) {
+    return new Response(null, { status: 401 });
   }
+  draftMode().enable();
+  return new Response(null, {
+    status: 307,
+    headers: {
+      location: slug ?? "",
+    },
+  });
 }

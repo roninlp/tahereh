@@ -7,5 +7,5 @@ export async function GET(request: NextRequest) {
   const slug = searchParams.get("slug");
 
   draftMode().disable();
-  return redirect(`/${slug}`);
+  return redirect(`/`);
 }

@@ -45,6 +45,11 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "image",
+            name: "heroImage",
+            label: "Hero Image",
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
