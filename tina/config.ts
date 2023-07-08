@@ -49,7 +49,7 @@ export default defineConfig({
             name: "heroImage",
             label: "Hero Image",
             ui: {
-              format(value) {
+              format(value: string) {
                 //add leading slash to value if it doesnt exist
                 return value.startsWith("/") ? value : `/${value}`;
               },
