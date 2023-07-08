@@ -13,7 +13,7 @@ export default function Blog({ data }: Props) {
         alt="hero"
         width={300}
         height={200}
-        src={`/uploads${data.post.heroImage}`}
+        src={`/uploads/${data.post.heroImage}`}
       />
       <TinaMarkdown content={data.post.body} />
     </article>
