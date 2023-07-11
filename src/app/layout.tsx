@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { Vazir, Paeez } from "@/fonts/fonts";
+import Header from "@/components/Header";
 
 export default function RootLayout({
   children,
@@ -8,7 +9,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${Vazir.variable} ${Paeez.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

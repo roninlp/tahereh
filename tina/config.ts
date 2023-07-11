@@ -25,10 +25,16 @@ export default defineConfig({
     publicFolder: "public",
   },
   media: {
-    tina: {
-      mediaRoot: "",
-      publicFolder: "public",
+    loadCustomStore: async () => {
+      const pack = await import("next-tinacms-cloudinary");
+
+      //  as any because the types are wrong
+      return pack.TinaCloudCloudinaryMediaStore as any;
     },
+    // tina: {
+    //   mediaRoot: "",
+    //   publicFolder: "public",
+    // },
   },
   schema: {
     collections: [
