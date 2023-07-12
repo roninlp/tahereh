@@ -49,7 +49,7 @@ const Header = () => {
             تماس با من
           </Link>
           <Link
-            href="/"
+            href="/portfolio"
             className="inline-block transition-colors duration-300 hover:text-weirdGray"
           >
             نمونه کار

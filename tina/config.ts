@@ -61,11 +61,69 @@ export default defineConfig({
             label: "Body",
             isBody: true,
           },
+          {
+            type: "object",
+            list: true,
+            name: "categories",
+            label: "Categories",
+            fields: [
+              {
+                type: "reference",
+                label: "Tag",
+                name: "tag",
+                collections: ["tag"],
+              },
+            ],
+          },
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
           router: ({ document }) => `/blog/${document._sys.filename}`,
         },
+      },
+      {
+        name: "project",
+        label: "Projects",
+        path: "content/projects",
+        fields: [
+          {
+            name: "company",
+            type: "string",
+            label: "Company",
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: "image",
+            type: "image",
+            label: "Image",
+          },
+          {
+            name: "description",
+            label: "Description",
+            type: "string",
+            isBody: true,
+          },
+          {
+            name: "link",
+            label: "Link",
+            type: "string",
+          },
+        ],
+      },
+      {
+        name: "tag",
+        label: "Tag",
+        path: "content/tags",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+        ],
       },
     ],
   },

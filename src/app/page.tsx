@@ -3,7 +3,7 @@ import BlogList from "@/components/BlogList";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { client } from "../../tina/__generated__/client";
+import { client } from "@/../tina/__generated__/client";
 
 export const metadata: Metadata = {
   title: "طاهره محزون",
