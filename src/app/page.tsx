@@ -92,11 +92,11 @@ export default async function Home() {
         </div>
       </section>
       <section className="flex flex-col items-center gap-8 bg-mid-pattern py-8 font-vazir text-white">
-        <h2 dir="rtl" className="z-10 text-center text-7xl font-bold">
-          <span className="relative inline-block before:absolute before:-inset-2 before:top-6 before:block before:-skew-y-3 before:bg-darkGreen">
+        <h2 dir="rtl" className="z-0 text-center text-7xl font-bold">
+          <span className="relative inline-block">
             <span className="relative">
               فلسفه
-              {/* <div className="absolute bottom-2 right-0 -z-10 h-1/2 w-full bg-darkGreen"></div> */}
+              <div className="absolute bottom-7 right-0 -z-10 h-1/2 w-full -skew-x-6 -skew-y-6 bg-darkGreen"></div>
             </span>
           </span>
           من
@@ -124,10 +124,12 @@ export default async function Home() {
           </ul>
         </div>
       </section>
-      <section className="mx-10 grid grid-cols-3 gap-4 pt-8">
-        <Suspense fallback={<p>Loading</p>}>
-          <BlogList />
-        </Suspense>
+      <section className="flex items-center justify-center">
+        <div className="mx-10 grid grid-cols-3 gap-8 pt-8">
+          <Suspense fallback={<p>Loading</p>}>
+            <BlogList />
+          </Suspense>
+        </div>
       </section>
     </>
   );

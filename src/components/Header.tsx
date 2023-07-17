@@ -1,10 +1,10 @@
 "use client";
 
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import headerTitle from "../../public/Header Title.png";
-import { useState, useEffect } from "react";
-import clsx from "clsx";
 
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -29,7 +29,7 @@ const Header = () => {
     <header
       className={clsx(
         "fixed z-10 flex h-28 w-full items-center justify-between border-b-2 border-black bg-white transition-transform ease-in-out",
-        showNavbar ? "-translate-y-14" : ""
+        showNavbar ? "-translate-y-14" : "",
       )}
     >
       <div className="relative h-full w-2/5 border-r-2 border-black text-black">
@@ -39,7 +39,7 @@ const Header = () => {
         <div
           className={clsx(
             "flex h-1/2 items-center justify-center gap-x-4 py-3 font-vazir text-sm transition-all md:gap-x-8 md:text-lg",
-            !showNavbar && "border-t-2 border-black"
+            !showNavbar && "border-t-2 border-black",
           )}
         >
           <Link
@@ -52,7 +52,7 @@ const Header = () => {
             href="/portfolio"
             className="inline-block transition-colors duration-300 hover:text-weirdGray"
           >
-            نمونه کار
+            Portfolio
           </Link>
           <Link
             href="/"
@@ -66,7 +66,7 @@ const Header = () => {
         href="/"
         className={clsx(
           "w-1/5 transition-transform duration-300 ease-in-out",
-          showNavbar ? "translate-y-7 md:scale-50 " : "translate-y-0"
+          showNavbar ? "translate-y-7 md:scale-50 " : "translate-y-0",
         )}
       >
         <Image
@@ -84,7 +84,7 @@ const Header = () => {
         <div
           className={clsx(
             "flex h-1/2 items-center justify-center gap-x-4 py-3 font-vazir text-sm transition-all md:gap-x-8 md:text-lg",
-            !showNavbar && "border-t-2 border-black"
+            !showNavbar && "border-t-2 border-black",
           )}
         >
           <Link
