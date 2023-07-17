@@ -14,7 +14,7 @@
     "@tinacms/auth": "^1.0.3",
     "@tinacms/cli": "^1.5.20",
     "@types/node": "20.1.0",
-    "@types/react": "18.2.5",
+    "@types/react": "^18.2.15",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.6.0",
@@ -32,12 +32,11 @@
     "tailwindcss": "3.3.2",
     "tailwindcss-animate": "^1.0.5",
     "tinacms": "^1.5.11",
-    "typescript": "5.0.4"
+    "typescript": "^5.1.6"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8"
+    "prettier": "2.8.8"
   }
 }

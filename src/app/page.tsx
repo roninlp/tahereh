@@ -1,9 +1,9 @@
-import { Button } from "@/components/Button";
 import BlogList from "@/components/BlogList";
+import { Button } from "@/components/Button";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
-import { client } from "@/../tina/__generated__/client";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "طاهره محزون",
@@ -11,10 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const postsResponse = await client.queries.postConnection();
-  const posts = postsResponse.data.postConnection.edges?.map((post) => {
-    return { slug: post?.node?._sys.filename };
-  });
   // console.log(posts);
   return (
     <>
@@ -129,12 +125,9 @@ export default async function Home() {
         </div>
       </section>
       <section className="mx-10 grid grid-cols-3 gap-4 pt-8">
-        {/* <BlogList /> */}
-        {posts?.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
-            {post.slug}
-          </Link>
-        ))}
+        <Suspense fallback={<p>Loading</p>}>
+          <BlogList />
+        </Suspense>
       </section>
     </>
   );
