@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "طاهره محزون",
   description: "نویسنده محتوا",
 };
+export const revalidate = 60;
 
 export default async function Home() {
   // console.log(posts);
