@@ -1,7 +1,7 @@
-import client from "../../../../tina/__generated__/client";
-import ClientBlog from "@/components/ClientBlog";
-import ServerBlog from "@/components/ServerBlog";
 import { draftMode } from "next/headers";
+import client from "../../../../tina/__generated__/client";
+import ClientBlog from "./ClientBlog";
+import ServerBlog from "./ServerBlog";
 
 export default async function Page({
   params: { filename },

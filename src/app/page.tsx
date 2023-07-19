@@ -124,8 +124,14 @@ export default async function Home() {
           </ul>
         </div>
       </section>
-      <section className="flex items-center justify-center">
-        <div className="mx-10 grid grid-cols-3 gap-8 pt-8">
+      <section
+        dir="rtl"
+        className="mx-40 flex flex-col justify-center pt-8 font-vazir"
+      >
+        <h3 className="text-5xl font-bold underline underline-offset-[16px]">
+          وبلاگ
+        </h3>
+        <div className="grid grid-cols-3 gap-8 pt-8">
           <Suspense fallback={<p>Loading</p>}>
             <BlogList />
           </Suspense>

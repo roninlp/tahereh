@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { Metadata } from "next";
 import { client } from "@/../tina/__generated__/client";
+import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -13,7 +12,7 @@ export default async function Portfolio() {
   const projects = projectResponse.data.projectConnection.edges?.map(
     (project) => {
       return project?.node;
-    }
+    },
   );
 
   return (

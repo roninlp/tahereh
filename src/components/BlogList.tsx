@@ -14,14 +14,19 @@ const BlogList = async () => {
   return (
     <>
       {posts?.map((post) => (
-        <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <Image
-            alt={post.title || ""}
-            src={post.image || ""}
-            width={250}
-            height={250}
-          />
-          <h4 className="font-vazir text-3xl">{post.title}</h4>
+        <Link key={post.slug} href={`/blog/${post.slug}`} className="group p-4">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <Image
+              alt={post.title || ""}
+              src={post.image || ""}
+              width={250}
+              height={250}
+              className="drop-shadow-hard transition-all duration-300 ease-in-out group-hover:drop-shadow-zero"
+            />
+            <h4 className="font-vazir text-2xl underline-offset-8 group-hover:underline">
+              {post.title}
+            </h4>
+          </div>
         </Link>
       ))}
     </>
