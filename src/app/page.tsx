@@ -127,16 +127,22 @@ export default async function Home() {
       </section>
       <section
         dir="rtl"
-        className="mx-40 flex flex-col justify-center pt-8 font-vazir"
+        className="mx-20 flex max-w-5xl flex-col justify-center pt-8 font-vazir sm:mx-24 lg:mx-32 xl:mx-auto"
       >
         <h3 className="text-5xl font-bold underline underline-offset-[16px]">
           وبلاگ
         </h3>
-        <div className="grid grid-cols-3 gap-8 pt-8">
+        <div className="grid grid-cols-1 gap-8 pt-8 sm:grid-cols-2 md:grid-cols-3">
           <Suspense fallback={<p>Loading</p>}>
             <BlogList />
           </Suspense>
         </div>
+      </section>
+      <section
+        dir="rtl"
+        className="mx-40 mt-8 font-vazir font-bold underline underline-offset-[16px]"
+      >
+        <h3 className="text-5xl">ارتباط با من</h3>
       </section>
     </>
   );

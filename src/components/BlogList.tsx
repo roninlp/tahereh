@@ -4,13 +4,15 @@ import client from "../../tina/__generated__/client";
 
 const BlogList = async () => {
   const postsResponse = await client.queries.postConnection();
-  const posts = postsResponse.data.postConnection.edges?.map((post) => {
-    return {
-      slug: post?.node?._sys.filename,
-      image: post?.node?.heroImage,
-      title: post?.node?.title,
-    };
-  });
+  const posts = postsResponse.data.postConnection.edges
+    ?.slice(0, 6)
+    .map((post) => {
+      return {
+        slug: post?.node?._sys.filename,
+        image: post?.node?.heroImage,
+        title: post?.node?.title,
+      };
+    });
   return (
     <>
       {posts?.map((post) => (

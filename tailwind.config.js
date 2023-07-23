@@ -1,7 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-
 const remark = require("remark");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: {
@@ -100,7 +99,14 @@ module.exports = {
         hard: "6px -6px #000",
         zero: "0px 0px #000",
       },
+      boxShadow: {
+        hard: "6px -6px #000",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require("tailwindcss-debug-screens"),
+  ],
 };

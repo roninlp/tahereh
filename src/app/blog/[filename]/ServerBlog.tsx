@@ -12,11 +12,12 @@ interface ImgProps {
   alt?: string;
 }
 
+// Overriding the img element so we can style every img element in a md file
 function img(props?: ImgProps) {
   return (
     <>
       <img
-        className="mx-auto rounded-2xl"
+        className="mx-auto rounded-2xl shadow-lg"
         src={props?.url}
         alt={props?.alt || ""}
       />
@@ -29,10 +30,12 @@ export default function Blog({ data }: Props) {
   return (
     <article
       dir="rtl"
-      className="flex flex-col items-center justify-center pt-40 font-vazir"
+      className="mx-auto flex w-4/5 max-w-3xl flex-col items-center justify-center pt-40 font-vazir"
     >
-      <h1 className="pb-4 text-4xl font-bold">{title}</h1>
-      <div className="flex w-8/12 items-center justify-between">
+      <h1 className="pb-4 text-center text-4xl font-bold">{title}</h1>
+      <div className="h-1 w-4/5 bg-black" />
+
+      <div className="mt-4 flex w-8/12 items-center justify-between">
         <p className="font-semibold text-weirdGray">نویسنده: طاهره محزون</p>
         <div className="flex items-center gap-2">
           <p>دسته بندی: </p>
