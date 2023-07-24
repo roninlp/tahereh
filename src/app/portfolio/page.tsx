@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "نویسنده محتوا",
 };
 
-export default async function Portfolio() {
+export default async function portfolio() {
   const projectResponse = await client.queries.projectConnection();
   const projects = projectResponse.data.projectConnection.edges?.map(
     (project) => {

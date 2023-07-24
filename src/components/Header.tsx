@@ -43,7 +43,7 @@ const Header = () => {
           )}
         >
           <Link
-            href="/"
+            href="/contact"
             className="inline-block transition-colors duration-300 hover:text-weirdGray"
           >
             تماس با من

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import client from "../../tina/__generated__/client";
 
+export const dynamic = "force-dynamic";
+
 const BlogList = async () => {
   const postsResponse = await client.queries.postConnection();
   const posts = postsResponse.data.postConnection.edges

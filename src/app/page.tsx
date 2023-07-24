@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function Home() {
-  // console.log(posts);
   return (
     <>
       <main className=" flex h-screen bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat">
@@ -50,7 +49,7 @@ export default async function Home() {
           </h3>
           <div>
             <Button size="lg" className="">
-              <p className="font-vazir text-2xl ">لورم ایپسوم</p>
+              <p className="text-2xl ">لورم ایپسوم</p>
             </Button>
           </div>
         </div>
