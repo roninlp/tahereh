@@ -1,12 +1,46 @@
 "use client";
 
 import { Button } from "@/components/Button";
+import React, { useState } from "react";
+
+function isInputNamedElement(
+  e: Element,
+): e is HTMLInputElement & { name: string } {
+  return "value" in e && "name" in e;
+}
 
 export default function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function handleOnSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const formData: Record<string, string> = {};
+
+    Array.from(e.currentTarget.elements)
+      .filter(isInputNamedElement)
+      .forEach((field) => {
+        if (!field.name) return;
+        formData[field.name] = field.value;
+      });
+
+    setIsLoading(true);
+
+    await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }),
+    });
+    setIsLoading(false);
+  }
   return (
     <>
       <form
         action=""
+        onSubmit={handleOnSubmit}
         className="mx-auto flex w-10/12 flex-col gap-8 font-vazir lg:w-4/5"
       >
         <div className="flex w-full flex-col gap-4 lg:flex-row">
@@ -47,7 +81,9 @@ export default function ContactForm() {
           />
         </div>
         <div className="max-w-min">
-          <Button>ارسال</Button>
+          <Button disabled={isLoading} type="submit">
+            ارسال
+          </Button>
         </div>
       </form>
     </>
