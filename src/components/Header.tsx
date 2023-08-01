@@ -4,7 +4,6 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import headerTitle from "../../public/Header Title.png";
 
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -70,7 +69,7 @@ const Header = () => {
         )}
       >
         <Image
-          src={headerTitle}
+          src="/headerTitle.png"
           height={91}
           width={256}
           alt="Tahereh Mahzoon"
