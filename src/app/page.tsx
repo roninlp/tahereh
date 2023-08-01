@@ -1,5 +1,6 @@
 import BlogList from "@/components/BlogList";
 import { Button } from "@/components/Button";
+import ContactForm from "@/components/ContactForm";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -128,7 +129,7 @@ export default async function Home() {
         dir="rtl"
         className="mx-20 flex max-w-5xl flex-col justify-center pt-8 font-vazir sm:mx-24 lg:mx-32 xl:mx-auto"
       >
-        <h3 className="text-5xl font-bold underline underline-offset-[16px]">
+        <h3 className="text-3xl font-bold underline underline-offset-[16px] md:text-5xl">
           وبلاگ
         </h3>
         <div className="grid grid-cols-1 gap-8 pt-8 sm:grid-cols-2 md:grid-cols-3">
@@ -139,9 +140,16 @@ export default async function Home() {
       </section>
       <section
         dir="rtl"
-        className="mx-40 mt-8 font-vazir font-bold underline underline-offset-[16px]"
+        className=" flex w-full flex-col bg-veryLightGray px-4 py-10"
       >
-        <h3 className="text-5xl">ارتباط با من</h3>
+        <div className="mx-10 sm:mx-24 lg:mx-32 xl:mx-auto">
+          <h3 className="font-vazir text-3xl font-bold underline underline-offset-[16px] md:text-5xl">
+            ارتباط با من
+          </h3>
+        </div>
+        <div className="mx-auto w-full max-w-5xl pt-10">
+          <ContactForm />
+        </div>
       </section>
     </>
   );

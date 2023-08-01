@@ -27,13 +27,30 @@ const Header = () => {
   return (
     <header
       className={clsx(
-        "fixed z-10 flex h-28 w-full items-center justify-between border-b-2 border-black bg-white transition-transform ease-in-out",
+        "fixed z-10 flex h-28 w-full items-center justify-between border-b-2 border-black bg-white transition-transform duration-300 ease-in-out",
         showNavbar ? "-translate-y-14" : "",
       )}
     >
       <div className="relative h-full w-2/5 border-r-2 border-black text-black">
-        <div className="flex h-1/2 items-center justify-center py-3 ">
-          instagram
+        <div className="flex h-1/2 items-center justify-center gap-2 py-3 ">
+          <Link href="https://virgool.io/@tahere.mahzoon">
+            <Image
+              className="drop-shadow-sm grayscale transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-md hover:grayscale-0"
+              src="/virgool.png"
+              width={32}
+              height={32}
+              alt="virgool"
+            />
+          </Link>
+          <Link href="https://www.linkedin.com/in/tahereh-mahzoon/">
+            <Image
+              className="drop-shadow-sm grayscale transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-md hover:grayscale-0"
+              src="/linkedin.png"
+              width={32}
+              height={32}
+              alt="linkedin"
+            />
+          </Link>
         </div>
         <div
           className={clsx(
